@@ -27,6 +27,10 @@ BUILD = BUILD_ROOT / f'client-compat-v{VERSION}'
 VARIANT_SOURCE_ENTRY = 'generated/moseyPLK/client/GmsBuildVariant.java'
 RESOLVER_SOURCE_ENTRY = 'generated/moseyPLK/client/GmsResolverBuild.java'
 RETAINED_RELEASES = {
+    'moseyPLK.client-v0.6.7.apk': '028dca46e7d43e5c78724cdb3bf82dd5075fe37c9bd5de2cb0fe6403f23ad3b3',
+    'moseyPLK.client-v0.6.7-sources.zip': '90028e56d3576cd5611e095bff97c0135b8c25c674e68623ae5409db2d6d4c47',
+    'moseyPLK.client-v0.6.7-adaptive-test.apk': '0f1f35b6918f9dcdac28d8c4cc2f9f10a59cd94184d244a0b8a643df4705588f',
+    'moseyPLK.client-v0.6.7-adaptive-test-sources.zip': 'ab6e85dbd2db4f4cb827e8c940d68824988828530378092b89f989e2968d6544',
     'moseyPLK.client-v0.6.6.apk': 'e86cc4ea692a464f43c168f0c1366cde4292cb391c8ef000f13c259a08c9786f',
     'moseyPLK.client-v0.6.6-sources.zip': 'f2e0b16f12ce6e3e86ceddc203ae4bb1b84e0e1a5c97e172f2b3e304df662e6b',
     'moseyPLK.client-v0.6.6-adaptive-test.apk': 'b48b6dda2806a6748975fa947414880f3a8e95b7d07e445680409f4e6629f491',

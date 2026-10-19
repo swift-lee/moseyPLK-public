@@ -22,6 +22,8 @@ CONTROL_HELPER = 'mosey_service_control'
 BUILD = ASSETS / f'build/registration-compat-v{VERSION}'
 STAGE = BUILD / 'module'
 RETAINED_RELEASES = {
+    'moseyPLK.service-v0.6.7.zip': 'a3c84ba39e24f28f66b700a1668f581a1ab13ca6ad458ec9ff4e29a33248c832',
+    'moseyPLK.service-v0.6.7-sources.zip': '5e31a794955c4bd4f0bc5669cee973efbeec9034349095edfc076862c1be7497',
     'moseyPLK.service-v0.6.6.zip': '80b0c5f0bcce45c62a6abeb0267ab8c5953b56208bcda555c2d0bdfe24546d1f',
     'moseyPLK.service-v0.6.6-sources.zip': 'c0a7fc9de7e10c208f2aa699646770ab783c099ec74424c290087f1ffc6105ae',
     'moseyPLK.service-v0.6.5.zip': '9dd543f761b3e42ffbe200a7f13b4bd0e0b8764aaba5f68325d58891b1b72f6f',

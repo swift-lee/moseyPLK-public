@@ -1,6 +1,6 @@
 # 第三方来源与许可
 
-原创项目代码与本文档采用 [Apache-2.0](LICENSE)。这一声明不替代第三方组件的原有许可，也不授予未随仓库提供的厂商资源的再分发权。
+原创项目代码与本文档采用 [Apache-2.0](LICENSE)。这一声明不替代第三方组件的原有许可，也不授予源码树以外的厂商资源的再分发权。
 
 | 随源码保留的部分 | 来源 | 许可与处理 |
 | --- | --- | --- |
@@ -12,11 +12,11 @@ Miuix 的构建依赖版本为 0.9.3；上表提交指实际参考的示例源�
 
 [OTA schema](research/scripts/update_metadata.proto) 所用上游原始输入的 SHA-256 为 `11b94f469c3ab3e7093ab26e39277d481d19351bce3e430553e3ffb44a263f05`。其生成模块嵌入的是通用消息描述，不是固件载荷。上游 AOSP 的 [schema 来源](https://android.googlesource.com/platform/system/update_engine/+/refs/heads/main/update_metadata.proto) 可用于查阅接口背景；本仓库固定输入以上表提交为准。
 
-## 只引用、没有随仓库分发的依赖
+## 只引用、没有随源码树分发的依赖
 
-Gradle 锁、校验元数据及构建脚本引用 Android SDK/NDK、JDK、Xposed API、DexKit、FlatBuffers、Kotlin、AndroidX/Compose、Miuix、libsu、JUnit、JSON 和 protobuf 等依赖。仓库保存版本、来源和校验信息，不保存这些依赖的 JAR、AAR、SO 或工具程序。各依赖继续适用其自身许可；项目的 Apache-2.0 声明不覆盖这些依赖。
+Gradle 锁、校验元数据及构建脚本引用 Android SDK/NDK、JDK、Xposed API、DexKit、FlatBuffers、Kotlin、AndroidX/Compose、Miuix、libsu、JUnit、JSON 和 protobuf 等依赖。源码树保存版本、来源和校验信息，不保存这些依赖的 JAR、AAR、SO 或工具程序。各依赖继续适用其自身许可；项目的 Apache-2.0 声明不覆盖这些依赖。
 
-构建脚本已有 DexKit Java/Core 许可检查和 APK 内许可材料打包逻辑。后续自行构建或分发成品时，应沿用该逻辑并核对实际依赖；本次交付为源码目录，没有构建或提供安装包。
+构建脚本已有 DexKit Java/Core 许可检查和 APK 内许可材料打包逻辑。自行构建或分发成品时，应沿用该逻辑并核对实际依赖。0.7.0 Release 的安装产物独立于源码集合，其依赖继续适用各自许可；服务 ZIP 含外部 OxygenOS 供体和原 Fold6 launcher，本项目 Apache-2.0 声明不授予这些外部载荷的许可。
 
 ## 未纳入的参考内容
 

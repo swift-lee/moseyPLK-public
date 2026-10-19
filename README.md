@@ -1,8 +1,8 @@
 # moseyPLK
 
-一加 15 国行 PLK110 / Android 16 / ARM64 的 Mosey、Quick Share 兼容研究工程。本仓库公开客户端、管理界面、服务脚本、原生兼容层和主机研究工具的源码，版本为 **0.6.7 / code 20**，统一读取 [release.json](release.json)。
+一加 15 国行 PLK110 / Android 16 / ARM64 的 Mosey、Quick Share 兼容研究工程。本仓库公开客户端、管理界面、服务脚本、原生兼容层和主机研究工具的源码，版本为 **0.7.0 / code 21**，统一读取 [release.json](release.json)。
 
-公开版采用 [Apache-2.0](LICENSE)。第三方来源、修改说明和独立许可见 [NOTICE](NOTICE) 与 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。Google、OnePlus 等名称用于说明兼容目标。
+本项目原创源码采用 [Apache-2.0](LICENSE)。第三方来源、修改说明和独立许可见 [NOTICE](NOTICE) 与 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。Google、OnePlus 等名称用于说明兼容目标。
 
 ## 仓库内容
 
@@ -15,9 +15,17 @@
 | [research](research/README.md) | DEX 定位、合成夹具和离线分析源码 |
 | [scripts](scripts/BUILD.md) | 构建、提取、归档、主机验证和只读采集入口 |
 
-固件、Google/厂商 APK、ELF、参考 launcher、厂商配置原件、数据库、设备日志、工具链二进制和签名身份均需由使用者在本地另行准备，不随仓库提供。统一工作目录为被 Git 忽略的 `moseyPLK-assets/`，路径定义见 [project_paths.py](scripts/project_paths.py)。
+固件、Google/厂商 APK、ELF、参考 launcher、厂商配置原件、数据库、设备日志、工具链二进制和签名身份均不进入源码树或源码归档；本地构建所需输入由使用者另行准备。统一工作目录为被 Git 忽略的 `moseyPLK-assets/`，路径定义见 [project_paths.py](scripts/project_paths.py)。
 
-这是源码发布。注册包与加载探针包依赖外部供体、参考 launcher、配置和工具；客户端构建始终要求原有签名身份，缺失时停止，不生成替代身份。公开树不支持旧基线模块打包。完整要求见 [构建说明](docs/build.md)。
+源码树中的注册包与加载探针包构建入口依赖外部供体、参考 launcher、配置和工具；客户端构建始终要求原有签名身份，缺失时停止，不生成替代身份。公开树不支持旧基线模块打包。完整要求见 [构建说明](docs/build.md)。
+
+## 0.7.0 安装产物
+
+`v0.7.0` Release 的安装交付为 `moseyPLK.client-v0.7.0.apk`、`moseyPLK.service-v0.7.0.zip` 及对应 SHA-256。客户端与服务共用 0.7.0 / code 21；正式 APK 沿用原有签名身份，服务 ZIP 的安装器仅接受 KernelSU。GitHub 仓库保持现有 private 可见性。
+
+服务 ZIP 包含外部 OxygenOS 供体及原 Fold6 launcher；这些安装载荷不属于公开源码集合，本项目的 Apache-2.0 声明不授予其许可。源码 tag 对应经审查的文本集合，本地重建仍需准备外部输入和原签名。
+
+本次版本推进不新增运行时功能。构建 provenance 保留 `device_tested=false`；本轮未由助手安装或操作手机，主机检查不代表 0.7.0 的 hook、发现或收发已获实机验收。实际构建与校验结果见 [验证记录](docs/verification.md)。
 
 ## 阅读与验证
 

@@ -102,14 +102,14 @@ class RegistrationPackageTests(unittest.TestCase):
         self.assertEqual(self.archive.read('load-probe.sh'),
                          (ROOT / 'experiments/load-probe/module/load-probe.sh').read_bytes())
 
-    def test_non_generated_payload_delta_is_exactly_v067_release_sync(self):
+    def test_non_generated_payload_delta_is_exactly_v070_release_sync(self):
         generated = {'module.prop', 'provenance.json', 'payload.sha256'}
-        # 0.6.7 changes only the shared release identity and the packaged
-        # handoff. All executable payload remains byte-identical to 0.6.6.
+        # 0.7.0 changes only the shared release identity and the packaged
+        # handoff. All executable payload remains byte-identical to 0.6.7.
         allowed_changes = {'README.md'}
-        previous_path = ASSETS / 'dist' / 'moseyPLK.service-v0.6.6.zip'
+        previous_path = ASSETS / 'dist' / 'moseyPLK.service-v0.6.7.zip'
         if not previous_path.is_file():
-            self.skipTest('Historical payload comparison requires the externally retained v0.6.6 ZIP.')
+            self.skipTest('Historical payload comparison requires the externally retained v0.6.7 ZIP.')
         with zipfile.ZipFile(previous_path) as previous:
             current_names = set(self.archive.namelist()) - generated
             previous_names = set(previous.namelist()) - generated

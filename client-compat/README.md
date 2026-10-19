@@ -1,6 +1,6 @@
 # moseyPLK 客户端
 
-客户端为 `moseyPLK.client`，当前 0.6.7 / code 20，版本来自根目录 [release.json](../release.json)。源码包含 Java LSPosed hook、Kotlin Compose/Miuix 管理界面、状态快照和纯主机测试。
+客户端为 `moseyPLK.client`，当前 0.7.0 / code 21，版本来自根目录 [release.json](../release.json)。源码包含 Java LSPosed hook、Kotlin Compose/Miuix 管理界面、状态快照和纯主机测试。
 
 管理界面展示分层状态、应用版本、设备公共 Build 字段与目标 getter 的声明信号。Activity 首次进入前台时尝试既有 root 会话，后续静默刷新；下拉动作单独显示刷新动画。Mosey 页只提供原生服务重启确认，GMS 页保留独立确认操作。普通 Activity 不加载 Xposed API，hook 不依赖 Activity root。
 
