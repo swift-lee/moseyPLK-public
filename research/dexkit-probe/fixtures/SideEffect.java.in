@@ -1,0 +1,7 @@
+public final class @SIDE_EFFECT@ {
+    public static volatile int calls;
+
+    public static void @EFFECT@() {
+        ++calls;
+    }
+}

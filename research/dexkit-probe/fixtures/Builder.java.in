@@ -1,0 +1,12 @@
+/** Synthetic declaration builder. No Android or configuration service access. */
+public final class @BUILDER@ {
+    private final String namespace;
+
+    public @BUILDER@(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public @READER@ @REGISTER@(int slot, String key, boolean defaultValue) {
+        return new @CELL@(namespace, slot, key, defaultValue);
+    }
+}

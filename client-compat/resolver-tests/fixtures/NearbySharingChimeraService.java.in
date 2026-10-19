@@ -1,0 +1,27 @@
+package com.google.android.gms.nearby.sharing;
+
+import android.content.Context;
+import @PACKAGE@.@MODEL@.*;
+
+/** Minimal complete sharing chain, compiled as data only. */
+public final class NearbySharingChimeraService {
+    public static int @SERVICE_INIT@ = 1;
+    private final @READ_CONTRACT@ @SERVICE_MEMO@;
+    private final @REGISTRY@ @SERVICE_REGISTRY@;
+    public NearbySharingChimeraService() {
+        @SERVICE_MEMO@ = @MEMO_FACTORY@.@WRAP@(new @SUPPLIER@());
+        @SERVICE_REGISTRY@ = new @REGISTRY@((Context) null);
+    }
+    public void onCreate() {
+        @PERIPHERAL_LOG@
+        if (@RECEIVER@.@RECEIVER_ROOT@.@ACCESS@().@GET_A@()) @SERVICE_REGISTRY@.@START@();
+    }
+    public void @LIFECYCLE@(boolean enabled) {
+        if (@MEMO_CONDITION@) {
+            if (enabled) @SERVICE_REGISTRY@.@START@(); else @STOP_REGISTRY@.@STOP@();
+        }
+    }
+    public void @ADVERTISING@(boolean enabled) { if (@RECEIVER@.@RECEIVER_ROOT@.@ACCESS@().@GET_A@()) android.util.Log.d("fixture", "advertising"); }
+    public void @SCANNING@() { if (@RECEIVER@.@RECEIVER_ROOT@.@ACCESS@().@GET_A@()) android.util.Log.d("fixture", "scanning"); }
+    @EXTRA_READERS@
+}

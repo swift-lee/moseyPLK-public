@@ -1,0 +1,14 @@
+[
+  {"id": "pure_a", "expression": "A", "semantic_family": "direct", "positive_shape": true},
+  {"id": "pure_a_renamed", "expression": "A", "semantic_family": "direct", "positive_shape": true, "renamed": true},
+  {"id": "or_ab", "expression": "A || B", "semantic_family": "short_circuit_or", "positive_shape": true},
+  {"id": "and_ab", "expression": "A && B", "semantic_family": "short_circuit_and", "positive_shape": false},
+  {"id": "not_a", "expression": "!A", "semantic_family": "negated", "positive_shape": false},
+  {"id": "duplicate_other_namespace", "expression": "A", "semantic_family": "direct", "positive_shape": true, "duplicate_namespace": "com.google.android.gms.unrelated"},
+  {"id": "duplicate_same_namespace", "expression": "A", "semantic_family": "direct_ambiguous_declaration", "positive_shape": false, "duplicate_namespace": "com.google.android.gms.nearby"},
+  {"id": "supplier_side_effect", "expression": "A", "semantic_family": "supplier_extra_side_effect", "positive_shape": false, "supplier_side_effect": true},
+  {"id": "getter_side_effect", "expression": "A", "semantic_family": "getter_extra_side_effect", "positive_shape": false, "getter_side_effect": true},
+  {"id": "constant_false", "expression": "false", "semantic_family": "unrelated_constant", "positive_shape": false},
+  {"id": "constant_true", "expression": "true", "semantic_family": "unrelated_constant", "positive_shape": false},
+  {"id": "discard_a_constant_false", "expression": "discard A; false", "semantic_family": "discarded_read_constant", "positive_shape": false}
+]

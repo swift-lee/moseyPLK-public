@@ -1,0 +1,4 @@
+public interface @CONTRACT@ {
+    boolean @GETTER_A@();
+    boolean @GETTER_B@();
+}

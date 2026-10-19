@@ -1,0 +1,20 @@
+public final class @HOLDER@ implements @CONTRACT@ {
+    // The namespace lives in <clinit>, separate from either key declaration.
+    private static final @BUILDER@ x = new @BUILDER@("@NAMESPACE@");
+
+    public static @READER@ @FACTORY_A@() {
+        return x.@REGISTER@(56, "45704091", false);
+    }
+
+    public static @READER@ @FACTORY_B@() {
+        return x.@REGISTER@(54, "45830365", false);
+    }
+
+    @Override public boolean @GETTER_A@() {
+        @GETTER_PREFIX@return ((Boolean) @FACTORY_A@().@READ@()).booleanValue();
+    }
+
+    @Override public boolean @GETTER_B@() {
+        return ((Boolean) @FACTORY_B@().@READ@()).booleanValue();
+    }
+}

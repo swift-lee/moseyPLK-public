@@ -1,0 +1,8 @@
+public final class @PROVIDER@ {
+    public static final @PROVIDER@ x = new @PROVIDER@();
+    private volatile @CONTRACT@ value = new @HOLDER@();
+
+    public @CONTRACT@ @ACCESS@() {
+        return value;
+    }
+}

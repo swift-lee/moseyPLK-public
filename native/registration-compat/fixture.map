@@ -1,0 +1,7 @@
+LIBBINDER_NDK {
+    global: AServiceManager_addService; AIBinder_isRemote; AIBinder_getClass; fixture_dump;
+};
+LIBBINDER_NDK31 {
+    global: AIBinder_Class_getDescriptor; AIBinder_forceDowngradeToSystemStability;
+    local: *;
+};

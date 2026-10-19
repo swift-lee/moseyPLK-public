@@ -1,0 +1,18 @@
+/** Values here are fixture defaults, never measured GMS runtime flag values. */
+public final class @CELL@ implements @READER@ {
+    public final String namespace;
+    public final int slot;
+    public final String key;
+    private final boolean defaultValue;
+
+    public @CELL@(String namespace, int slot, String key, boolean defaultValue) {
+        this.namespace = namespace;
+        this.slot = slot;
+        this.key = key;
+        this.defaultValue = defaultValue;
+    }
+
+    @Override public Object @READ@() {
+        return Boolean.valueOf(defaultValue);
+    }
+}

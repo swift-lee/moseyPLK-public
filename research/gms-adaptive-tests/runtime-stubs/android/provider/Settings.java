@@ -1,0 +1,1 @@
+package android.provider; public final class Settings { public static final class Global { public static final String BOOT_COUNT = "boot_count"; public static int getInt(android.content.ContentResolver resolver, String name, int fallback) { return 1; } } }

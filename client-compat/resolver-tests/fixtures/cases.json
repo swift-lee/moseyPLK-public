@@ -1,0 +1,408 @@
+[
+  {
+    "id": "complete_a",
+    "expression": "A",
+    "accepted": true
+  },
+  {
+    "id": "complete_a_or_b",
+    "accepted": true
+  },
+  {
+    "id": "global_rename",
+    "renamed": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "slot_capacity_default",
+    "slot": 17,
+    "capacity": 200,
+    "default_true": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "peripheral_consumers",
+    "peripheral": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "null_check_helper",
+    "helper": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "reuse_receiver",
+    "reuse_receiver": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "boolean_constants",
+    "boolean_constants": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "unused_secondary",
+    "expression": "A",
+    "unused_secondary": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "ambiguous_target_getters",
+    "unrelated_key_declaration": true,
+    "accepted": false,
+    "base": "complete_a_or_b",
+    "stage": "discovery",
+    "reason": "phenotype_getter_candidates=2"
+  },
+  {
+    "id": "separate_secondary_receiver",
+    "separate_b": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "memo_source_mutable_single_writer",
+    "memo_source_mutable": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "platform_bind_forwarder",
+    "bind_wrapper": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "wrong_namespace",
+    "namespace": "com.google.android.gms.other",
+    "accepted": false,
+    "reason": "getter_candidates_45704091=0",
+    "stage": "discovery",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "wrong_key",
+    "key": "45704092",
+    "accepted": false,
+    "reason": "getter_candidates_45704091=0",
+    "stage": "discovery",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "wrong_cache_slot",
+    "wrong_slot": true,
+    "accepted": false,
+    "reason": "builder_cas_arguments",
+    "stage": "flag",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "wrong_receiver",
+    "wrong_receiver": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "helper_side_effect",
+    "helper": true,
+    "helper_effect": true,
+    "accepted": false,
+    "reason": "critical_unknown_opcode:sget",
+    "stage": "flag",
+    "base": "null_check_helper"
+  },
+  {
+    "id": "helper_class_initializer_effect",
+    "helper": true,
+    "helper_init_effect": true,
+    "accepted": false,
+    "reason": "null_helper_class_side_effect",
+    "stage": "flag",
+    "base": "null_check_helper"
+  },
+  {
+    "id": "helper_wrong_object",
+    "helper": true,
+    "helper_wrong_object": true,
+    "accepted": false,
+    "reason": "builder_null_check_receiver",
+    "stage": "flag",
+    "base": "null_check_helper"
+  },
+  {
+    "id": "helper_swallowed_exception",
+    "helper": true,
+    "helper_swallow": true,
+    "accepted": false,
+    "reason": "critical_exception_handler",
+    "stage": "flag",
+    "base": "null_check_helper"
+  },
+  {
+    "id": "helper_skips_null",
+    "helper": true,
+    "helper_skip_null": true,
+    "accepted": false,
+    "reason": "null_helper_conditional_check",
+    "stage": "flag",
+    "base": "null_check_helper"
+  },
+  {
+    "id": "helper_incompatible_cast",
+    "helper": true,
+    "helper_cast": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "null_helper_unknown_cast",
+    "base": "null_check_helper"
+  },
+  {
+    "id": "expression_and",
+    "expression": "A_AND_B",
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "expression_not",
+    "expression": "NOT_A",
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "inverted_memo_gate",
+    "inverted_memo": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "wrong_registry_receiver",
+    "wrong_registry": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "decoy_binding",
+    "decoy_bind": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "receiver_wrong_payload_implementation",
+    "wrong_payload": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "receiver_mutable_payload",
+    "mutable_payload": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "receiver_accessor_allocation",
+    "accessor_allocation": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "receiver_unknown_initializer_call",
+    "receiver_initializer_call": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "memo_returns_false",
+    "memo_constant": "false",
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "memo_returns_true",
+    "memo_constant": "true",
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "memo_wrong_supplier",
+    "memo_wrong_source": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "memo_additional_source_writer",
+    "memo_extra_writer": true,
+    "accepted": true,
+    "base": "memo_source_mutable_single_writer",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "bind_forward_drops_intent",
+    "bind_wrapper": true,
+    "bind_drop_intent": true,
+    "accepted": true,
+    "base": "platform_bind_forwarder",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "bind_forward_drops_context",
+    "bind_wrapper": true,
+    "bind_drop_context": true,
+    "accepted": true,
+    "base": "platform_bind_forwarder",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "bind_forward_drops_connection",
+    "bind_wrapper": true,
+    "bind_drop_connection": true,
+    "accepted": true,
+    "base": "platform_bind_forwarder",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "bind_forward_cycle",
+    "bind_wrapper": true,
+    "bind_cycle": true,
+    "accepted": true,
+    "base": "platform_bind_forwarder",
+    "scope": "downstream_independence"
+  },
+  {
+    "id": "phenotype_without_service",
+    "phenotype_only": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "no_service_or_supplier_required"
+  },
+  {
+    "id": "same_key_other_namespace",
+    "other_namespace_key": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "secondary_key_changed",
+    "irrelevant_secondary_key": true,
+    "accepted": true,
+    "base": "complete_a_or_b",
+    "scope": "secondary_flag_not_required"
+  },
+  {
+    "id": "getter_constant_after_read",
+    "getter_body": "@FACTORY_A@(); return false;",
+    "accepted": false,
+    "stage": "flag",
+    "reason": "getter_operand_chain",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "getter_wrong_flag_operand",
+    "getter_body": "@FACTORY_A@(); return ((Boolean) @FACTORY_B@().@READ@()).booleanValue();",
+    "accepted": false,
+    "stage": "flag",
+    "reason": "getter_operand_chain",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "getter_side_effect",
+    "getter_side_effect": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "critical_side_effect",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "getter_extra_call",
+    "getter_extra_call": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "critical_unknown_call",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "factory_drops_default",
+    "factory_drops_default": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "namespace_boolean_return_flow",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "default_wrong_source",
+    "default_wrong_source": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "flag_default_flow",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "negative_cache_slot",
+    "slot": -1,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "flag_key_default_or_index",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "cache_slot_at_capacity",
+    "slot": 64,
+    "capacity": 64,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "config_initializer_flow",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "phenotype_without_getter_interface",
+    "phenotype_only": true,
+    "no_getter_interface": true,
+    "accepted": true,
+    "base": "phenotype_without_service",
+    "scope": "concrete_getter_needs_no_interface"
+  },
+  {
+    "id": "wrong_namespace_with_target_literal_decoy",
+    "namespace": "com.google.android.gms.other",
+    "namespace_decoy": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "namespace_constructor_argument_flow",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "wrong_key_with_target_literal_decoy",
+    "key": "45704092",
+    "key_decoy": true,
+    "accepted": false,
+    "stage": "flag",
+    "reason": "flag_key_default_or_index",
+    "base": "complete_a_or_b"
+  },
+  {
+    "id": "valid_getter_with_invalid_same_namespace_candidate",
+    "unrelated_key_declaration": true,
+    "other_getter_invalid": true,
+    "accepted": true,
+    "base": "complete_a_or_b"
+  }
+]

@@ -1,0 +1,6 @@
+id=mosey-plk110-cn
+name=OnePlus 15 CN Quick Share Extension
+version=v0.4.1-startup-diagnostics
+versionCode=8
+author=PLK110 adaptation; reference launcher from user-provided Z Fold6 module
+description=External mounts and original Fold6 launcher; KernelSU rule syntax fix and verified startup diagnostics. Experimental: VINTF registration and AirDrop require device validation.

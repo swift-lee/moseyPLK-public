@@ -1,0 +1,4 @@
+LIBBINDER_NDK {
+    global: AServiceManager_addService;
+    local: *;
+};

@@ -1,0 +1,26 @@
+moseyPLK public source collection
+Original project code and documentation are made available under Apache-2.0.
+Third-party copyright and license notices remain applicable to their portions.
+
+UI portions are adapted and modified from GhostLock-App:
+  https://github.com/YuKongA/ghostlock-app
+  commit 3bd95d37e4874821d4143fc7f0fbd85fc2348ee3
+  Apache License, Version 2.0
+
+UI portions are also adapted and modified from compose-miuix examples:
+  Copyright 2025, compose-miuix-ui contributors
+  https://github.com/compose-miuix-ui/miuix
+  commit 5c91d5e5ce1a2fc7e8bdc1258a881c555102bbca
+  Apache License, Version 2.0
+
+OTA update metadata schema:
+  Copyright (C) 2010 The Android Open Source Project
+  Apache License, Version 2.0
+  Retrieved from ssut/payload-dumper-go, commit
+  05fe59e21c9f271fba38398c7c040993313ecd04.
+  Schema whitespace was normalized and provenance comments were added;
+  message definitions are unchanged.
+  The Python schema module was generated from this schema; its source and
+  provenance notice are included. The Go dumper and tool binaries are not included.
+
+See THIRD_PARTY_NOTICES.md for source locations and dependency boundaries.

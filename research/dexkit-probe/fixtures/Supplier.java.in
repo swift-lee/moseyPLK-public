@@ -1,0 +1,5 @@
+public final class @SUPPLIER@ {
+    public Object @SUPPLY@() {
+        @SUPPLIER_BODY@
+    }
+}

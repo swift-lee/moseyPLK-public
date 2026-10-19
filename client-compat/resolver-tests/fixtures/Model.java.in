@@ -1,0 +1,149 @@
+package @PACKAGE@;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.ComponentName;
+import android.os.IBinder;
+import android.content.pm.ResolveInfo;
+import android.content.pm.ServiceInfo;
+import java.util.concurrent.atomic.AtomicReferenceArray;
+
+/** Host-generated DEX data. The harness never loads these classes. */
+public final class @MODEL@ {
+    private @MODEL@() {}
+    public interface @READ_CONTRACT@ { Object @READ@(); }
+    public interface @GATE_CONTRACT@ { boolean @GET_A@(); @B_CONTRACT@ }
+    public interface @NS_CONTRACT@ { @READ_CONTRACT@ @MAKE@(String key, boolean fallback); }
+    public static final class @NAMESPACE@ implements @NS_CONTRACT@ {
+        public final String @NS_VALUE@;
+        public @NAMESPACE@(String namespace) { this.@NS_VALUE@ = namespace; }
+        public @READ_CONTRACT@ @MAKE@(String key, boolean fallback) {
+            return new @FLAG@(@NS_VALUE@, key, @FACTORY_DEFAULT@);
+        }
+    }
+    public static final class @NAMESPACE_ROOT@ {
+        public static final @NS_CONTRACT@ @ROOT@ = new @NAMESPACE@("@NAMESPACE_TEXT@");
+        @NAMESPACE_DECOY@
+    }
+    public static class @FLAG_BASE@ implements @READ_CONTRACT@ {
+        public final String @FLAG_NAMESPACE@;
+        public final String @FLAG_KEY@;
+        public @FLAG_BASE@(String namespace, String key) { this.@FLAG_NAMESPACE@ = namespace; this.@FLAG_KEY@ = key; }
+        public Object @READ@() { return @DISPATCH@(@CONTEXT@.@CONTEXT_GET@()); }
+        public Object @DISPATCH@(Object context) { return null; }
+    }
+    public static final class @FLAG@ extends @FLAG_BASE@ {
+        public final boolean @FLAG_DEFAULT@;
+        public @FLAG@(String namespace, String key, boolean fallback) { super(namespace, key); this.@FLAG_DEFAULT@ = fallback; }
+        public Object @DEFAULT@() { @DEFAULT_BODY@ }
+        public Object @DISPATCH@(Object context) { return @DEFAULT@(); }
+    }
+    public static final class @CONTEXT@ {
+        public static Object @CONTEXT_GET@() { return null; }
+    }
+    public static final class @CHECK@ {
+        @CHECK_FIELDS@
+        public static void @CHECK_NULL@(Object object) { @CHECK_BODY@ }
+    }
+    public static final class @CACHE_HELPER@ {
+        public static boolean @CAS@(AtomicReferenceArray<Object> array, int slot, Object value) {
+            do { if (array.compareAndSet(slot, null, value)) return true; } while (array.get(slot) == null);
+            return false;
+        }
+    }
+    public static final class @CONFIG@ {
+        private final @NS_CONTRACT@ @CONFIG_NS@;
+        private final AtomicReferenceArray<Object> @CONFIG_CACHE@;
+        public @CONFIG@(@NS_CONTRACT@ namespace, int size) {
+            @CONFIG_NS@ = namespace; @CONFIG_CACHE@ = new AtomicReferenceArray<Object>(size);
+        }
+        public @READ_CONTRACT@ @REGISTER@(int slot, String key, boolean fallback) {
+            @READ_CONTRACT@ found = (@READ_CONTRACT@) @CONFIG_CACHE@.get(slot);
+            if (found == null) {
+                found = @CONFIG_NS@.@MAKE@(key, fallback);
+                if (!@CACHE_HELPER@.@CAS@(@CONFIG_CACHE@, @WRITE_SLOT@, found)) {
+                    found = (@READ_CONTRACT@) @CONFIG_CACHE@.get(slot);
+                    @NULL_CHECK@
+                }
+            }
+            return found;
+        }
+    }
+    public static final class @HOLDER@ @HOLDER_INTERFACE@ {
+        private static final @CONFIG@ @HOLDER_CONFIG@ = new @CONFIG@(@NAMESPACE_ROOT@.@ROOT@, @CAPACITY@);
+        @GETTER_FIELDS@
+        public static @READ_CONTRACT@ @FACTORY_A@() { @KEY_DECOY@ return @HOLDER_CONFIG@.@REGISTER@(@SLOT_A@, "@KEY_A@", @DEFAULT_A@); }
+        public boolean @GET_A@() { @GETTER_BODY@ }
+        @B_IMPLEMENTATION@
+    }
+    // DOWNSTREAM_COMPATIBILITY_FIXTURE
+    public static final class @PAYLOAD@ {
+        public @PAYLOAD_FINAL@ Object @PAYLOAD_FIELD@;
+        public @PAYLOAD@(Object value) { @PAYLOAD_FIELD@ = value; }
+    }
+    public static final class @RECEIVER@ {
+        public static final @RECEIVER@ @RECEIVER_ROOT@ = new @RECEIVER@();
+        private final Object @RECEIVER_FIELD@;
+        @RECEIVER_EXTRA_INIT@
+        public @RECEIVER@() { @RECEIVER_FIELD@ = new @PAYLOAD@(@RECEIVER_PAYLOAD@); }
+        public @GATE_CONTRACT@ @ACCESS@() { @ACCESSOR_BODY@ }
+        public static boolean @DIRECT@() { return @RECEIVER_ROOT@.@ACCESS@().@GET_A@(); }
+    }
+    public static final class @SUPPLIER@ implements @READ_CONTRACT@ {
+        public Object @READ@() {
+            int initialized = com.google.android.gms.nearby.sharing.NearbySharingChimeraService.@SERVICE_INIT@;
+            @SUPPLIER_BODY@
+        }
+    }
+    public static final class @MEMO_FACTORY@ {
+        public static @READ_CONTRACT@ @WRAP@(@READ_CONTRACT@ source) { return new @MEMO@(@MEMO_FACTORY_SOURCE@); }
+    }
+    public static final class @MEMO@ implements @READ_CONTRACT@ {
+        private @MEMO_FINAL@ @READ_CONTRACT@ @MEMO_SOURCE@;
+        public @MEMO@(@READ_CONTRACT@ source) { @MEMO_SOURCE@ = source; }
+        public Object @READ@() { @MEMO_READ_BODY@ }
+        @MEMO_EXTRA_WRITER@
+    }
+    public static final class @COMMAND@ {}
+    public static final class @STATE@ {
+        public static final @STATE@ @STATE_ROOT@ = new @STATE@();
+        public void @REDUCE@(Context context, Object command) {
+            if (command instanceof @COMMAND@) {
+                android.util.Log.d("ExternalProviderRegistryBroadcastReceiver", "provider lookup");
+                Intent intent = new Intent("com.google.android.nearby.SHARING_PROVIDER");
+                for (ResolveInfo info : context.getPackageManager().queryIntentServices(intent, 0)) {
+                    @BIND_CALL@
+                }
+            }
+        }
+    }
+    public static final class @REGISTRY@ {
+        private final Context @REGISTRY_CONTEXT@;
+        private final @STATE@ @REGISTRY_STATE@;
+        public @REGISTRY@(Context context) { @REGISTRY_CONTEXT@ = context; @REGISTRY_STATE@ = @STATE@.@STATE_ROOT@; }
+        public void @START@() { @SEND@(new @COMMAND@()); }
+        public void @STOP@() { android.util.Log.d("NearbyExternalProviderRegistry", "Shutting down"); }
+        public void @SEND@(Object command) { @REGISTRY_STATE@.@REDUCE@(@REGISTRY_CONTEXT@, command); }
+    }
+    public static final class @BINDER@ {
+        public static boolean @FILTER@(ServiceInfo info, Context context) { return info != null; }
+        public static void @BIND@(ServiceInfo info, Context context) {
+            if (@FILTER@(info, context)) {
+                Intent intent = new Intent("com.google.android.nearby.SHARING_PROVIDER");
+                intent.setClassName(info.packageName, info.name);
+                ServiceConnection connection = new @BIND_CONNECTION@();
+                if (@PLATFORM_BIND@)
+                    android.util.Log.d("NearbyExternalProviderRegistry", "Bound to provider %s");
+                else android.util.Log.d("NearbyExternalProviderRegistry", "Failed to bind to provider %s");
+            }
+        }
+        @BIND_EXTRA_HELPER@
+        public static void @DECOY@(ServiceInfo info, Context context) { android.util.Log.d("decoy", "ignored"); }
+    }
+    public static final class @BIND_CONNECTION@ implements ServiceConnection {
+        public void onServiceConnected(ComponentName name, IBinder service) {}
+        public void onServiceDisconnected(ComponentName name) {}
+    }
+    @EXTRA_CLASSES@
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <queries>
+        <package android:name="com.google.android.mosey" />
+        <package android:name="com.google.android.gms" />
+        <package android:name="top.netkumiko.moseyclientcompat" />
+    </queries>
+    <application android:label="moseyPLK" android:allowBackup="false"
+        android:icon="@drawable/ic_launcher" android:roundIcon="@drawable/ic_launcher"
+        android:theme="@style/Theme.Mosey">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposedminversion" android:value="82" />
+        <meta-data android:name="xposeddescription"
+            android:value="Mosey 服务管理与 GMS Phenotype 自动适配；版本差异仅提醒。" />
+        <meta-data android:name="xposedscope"
+            android:value="com.google.android.mosey;com.google.android.gms" />
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
